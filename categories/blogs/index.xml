@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blogs on Tinker - A blog website</title>
+    <title>blogs on Tinker - A Blog Website</title>
     <link>/categories/blogs/</link>
-    <description>Recent content in blogs on Tinker - A blog website</description>
+    <description>Recent content in blogs on Tinker - A Blog Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Mar 2019 14:13:23 +0800</lastBuildDate>
@@ -12,14 +12,14 @@
     
     
     <item>
-      <title>Home</title>
+      <title></title>
       <link>/about/</link>
       <pubDate>Fri, 08 Mar 2019 14:13:23 +0800</pubDate>
       
       <guid>/about/</guid>
       <description>&lt;h1 id=&#34;tinker&#34;&gt;&lt;strong&gt;Tinker&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
+&lt;h2 id=&#34;about-me&#34;&gt;&lt;em&gt;About Me&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;我是一名大学生，程序员，喜欢二次元（就是宅嘛。。。），这里会记录我的学习和生活点滴。&lt;/p&gt;
 
@@ -35,7 +35,7 @@
 &lt;li&gt;more later&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;connection&#34;&gt;Connection&lt;/h2&gt;
+&lt;h2 id=&#34;connection&#34;&gt;&lt;em&gt;Connection&lt;/em&gt;&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;e-mail&lt;/strong&gt; : &lt;a href=&#34;mailto:xzt.xu4@gmail.com&#34;&gt;xzt.xu4@gmail.com&lt;/a&gt;&lt;/p&gt;</description>
     </item>
