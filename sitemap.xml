@@ -3,19 +3,91 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2019-03-08T14:13:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/manjaro/</loc>
+    <lastmod>2019-03-08T14:11:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/win10/</loc>
+    <lastmod>2019-03-08T14:09:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/mk/</loc>
+    <lastmod>2019-03-08T14:05:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/manjaro/</loc>
+    <lastmod>2019-03-08T14:11:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/</loc>
+    <lastmod>2019-03-08T14:11:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2019-03-08T14:13:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/blogs/</loc>
+    <lastmod>2019-03-08T14:13:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/mkdown/</loc>
+    <lastmod>2019-03-08T14:05:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2019-03-08T14:09:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E7%BE%8E%E5%8C%96/</loc>
+    <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

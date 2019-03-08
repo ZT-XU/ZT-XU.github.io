@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>美化 on Tinker</title>
+    <link>http://localhost:1313/tags/%E7%BE%8E%E5%8C%96/</link>
+    <description>Recent content in 美化 on Tinker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Mar 2019 14:11:52 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E7%BE%8E%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Manjaro 美化与调优</title>
+      <link>http://localhost:1313/post/manjaro/</link>
+      <pubDate>Fri, 08 Mar 2019 14:11:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/manjaro/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;之前说过要写一篇Linux的优化文章，今天正好有空，赶紧开工。我曾经是Ubuntu的忠实粉丝，但是如今我已经叛逃到Manjaro了。&lt;/p&gt;
+
+&lt;p&gt;为什么是Manjaro？&lt;br /&gt;
+首先，Manjaro是基于Arch Linux的！！！所以基本Arch上的操作（强大的Arch wiki）都可以应用到Manjaro上.&lt;br /&gt;
+其次，Manjaro基于Arch开发，将Arch安装过程中很多复杂的操作（特别是驱动）都先帮你弄好了，所以安装不会像Arch那么复杂，反而和Ubuntu安装过程一样简单。&lt;br /&gt;
+最后，用了Manjaro我们也可以和大佬们一样高呼“Arch 大法好了”，软件丰富，安装简单，基本一条命令就搞定，不需要像Ubuntu一样（可能）需要安装依赖！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;和之前一样，我会从刚装完Manjaro的电脑开始，本文分为三部分，第一部分说一下刚装好Manjaro之后的一些配置和必要的软件安装，第二部分讲一下Manjaro的美化操作（太丑了，强迫症受不了啊），第三部分讲一些优化操作还有软件安装。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;注： Manjaro根据不同的桌面环境有不同的版本，我的是Gnome版本。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;安装manjaro之后要做的几件事&#34;&gt;安装Manjaro之后要做的几件事&lt;/h2&gt;
+
+&lt;h3 id=&#34;一-更换源&#34;&gt;一、更换源&lt;/h3&gt;
+
+&lt;p&gt;Manjaro换源很简单&lt;br /&gt;
+&lt;code&gt;sudo pacman-mirrors -i -c China -m rank&lt;/code&gt;
+&lt;code&gt;sudo pacman -Syy&lt;/code&gt;&lt;br /&gt;
+这个会显示最快的几个源，选最快的那个就行，我选的是中科大的源。
+&amp;gt;这样其实就可以了，但是我安装某些软件的时候比如chrome（yay可以解决，但是太慢了），pacman是找不到的，所以推荐修改配置文件，并安装GPG key，这样就可以用pacman安装一些常用的软件了，具体原因我也不清楚，还希望有大佬可以解答一下。&lt;/p&gt;
+
+&lt;p&gt;修改&lt;code&gt;/etc/pacman.conf&lt;/code&gt;,在最后一行添加：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;archlinuxcn&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;nv&#34;&gt;SigLevel&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; Optional TrustedOnly
+&lt;span class=&#34;nv&#34;&gt;Server&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; https://mirrors.ustc.edu.cn/archlinuxcn/&lt;span class=&#34;nv&#34;&gt;$arch&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;然后，命令行运行：&lt;br /&gt;
+&lt;code&gt;sudo pacman -S archlinuxcn-keyring&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;sduo pacman -Syy&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;二-卸载manjaro自带的一些没用的软件&#34;&gt;二、卸载Manjaro自带的一些没用的软件&lt;/h3&gt;
+
+&lt;p&gt;Manjaro自带了一些我们不需要的软件，留着他们一点都不优雅。&lt;/p&gt;
+
+&lt;h4 id=&#34;steam&#34;&gt;&lt;strong&gt;steam&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;不知道Linux的steam能来干嘛？卖萌吗？软件包管理器搜索steam，将&lt;code&gt;steam-gnome&lt;/code&gt;卸载。&lt;/p&gt;
+
+&lt;h4 id=&#34;office&#34;&gt;&lt;strong&gt;office&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;Manjaro自带了两个office，都没有WPS好用，果断卸载。软件包管理器搜索office，将&lt;code&gt;Libre-office&lt;/code&gt;和&lt;code&gt;ms-office-online&lt;/code&gt;卸载。&lt;br /&gt;
+其他的比如还有发邮件的（忘记什么名字了），uget，qtorrent 对我没用，我也都卸载了，你可以自己在软件包管理器里看哪些没用卸载，其实不管也行，我就是强迫症。。。
+&amp;gt; ！！！：卸载的时候要谨慎，带Gnome的还有qt的千万不要卸载，依赖关系太多的也不要卸载，不要问我怎么知道的。。。&lt;/p&gt;
+
+&lt;p&gt;卸载之后就可以更新一下软件了&lt;br /&gt;
+&lt;code&gt;sudo pacman -Syyu&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;三-常用软件&#34;&gt;三、常用软件&lt;/h2&gt;
+
+&lt;h3 id=&#34;yay&#34;&gt;yay&lt;/h3&gt;
+
+&lt;p&gt;以后可以用yay来代替pacman安装软件&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S yay base-devel&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;搜狗输入法&#34;&gt;搜狗输入法&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo pacman -S fcitx-im &lt;span class=&#34;c1&#34;&gt;#全部安装&lt;/span&gt;
+sudo pacman -S fcitx-configtool
+sudo pacman -S fcitx-sogoupinyin&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;配置fcitx并重启使其生效&lt;/p&gt;
+
+&lt;h3 id=&#34;谷歌浏览器&#34;&gt;谷歌浏览器&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S google-chrome&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;vim&#34;&gt;vim&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S vim&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;git&#34;&gt;git&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S git&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;vscode&#34;&gt;vscode&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S visual-studio-code-bin&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;vlc视频播放器&#34;&gt;VLC视频播放器&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S vlc&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;albert-软件启动神器&#34;&gt;Albert 软件启动神器&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo pacman -S albert&lt;/code&gt;
+&amp;gt; 设置中设置快捷键，开机启动，extension中勾选application和files。&lt;/p&gt;
+
+&lt;h3 id=&#34;网易云音乐&#34;&gt;网易云音乐&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;yay -S netease-cloud-music&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;wps&#34;&gt;wps&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;yay -S wps-office&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;yay -S ttf-wps-fonts&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;四-美化&#34;&gt;四、美化&lt;/h3&gt;
+
+&lt;p&gt;Manjaro默认太丑了，不能忍。。。&lt;/p&gt;
+
+&lt;h4 id=&#34;主题&#34;&gt;主题&lt;/h4&gt;
+
+&lt;p&gt;我选择arh主题，这个主题很漂亮，搭配copernico这个透明的shell-theme，美化效果见下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/Manjaro_yh/meihua.png&#34; alt=&#34;美化&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;安装：&lt;br /&gt;
+&lt;code&gt;yay -S gtk-theme-arc-git&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;yay -S gnome-shell-theme-copernico-git&lt;/code&gt;&lt;br /&gt;
+然后在tweak中选择这两个主题，再去网上找一张好看的壁纸，最后在dash to dock中配置一下（选择在下方并设置透明），就大功告成啦！！！&lt;/p&gt;
+
+&lt;h4 id=&#34;gnome-插件&#34;&gt;Gnome 插件&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;需要在谷歌浏览器中安装Gnome shell extension插件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Manjaro自带不少Gnome拆件，有些好用有些没用，这里给大家看看我的Gnome拆件列表，大家可以做个参考（一些自带的没有出现就表明我弃用它了）：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Activities configurator&lt;/strong&gt;&lt;br /&gt;
+可以优化顶栏，去掉一些没用的提示，我的配置如下：&lt;br /&gt;
+&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/Manjaro_yh/peizi.png&#34; alt=&#34;配置&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Coverflow Alt-Tab&lt;/strong&gt;&lt;br /&gt;
+alt-tab 切换效果美化&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;GnomeStatsPro&lt;/strong&gt;&lt;br /&gt;
+系统监视器&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;simple net speed&lt;/strong&gt;&lt;br /&gt;
+显示实时网速&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Status Area Horizontal Spacing&lt;/strong&gt;&lt;br /&gt;
+使顶栏更加紧凑&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Window is ready&lt;/strong&gt;&lt;br /&gt;
+去掉Window is ready 这个的无用提示&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;(K)StatusNotifierItem/AppIndicator Support&lt;/strong&gt; （系统自带）&lt;br /&gt;
+可以在顶栏显示后台程序图标tu&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Pamac Updates Indicator&lt;/strong&gt; （系统自带）&lt;br /&gt;
+提醒软件更新状态&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;User Themes&lt;/strong&gt; (系统自带)
+让用户可以使用shell主题&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;dash to dock&lt;/strong&gt; (系统自带)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;五-调优&#34;&gt;五、调优&lt;/h3&gt;
+
+&lt;h4 id=&#34;设置-alt-ctrl-t-启动终端&#34;&gt;设置&lt;code&gt;alt + ctrl + T&lt;/code&gt; 启动终端&lt;/h4&gt;
+
+&lt;p&gt;打开&lt;code&gt;设置&lt;/code&gt;，在&lt;code&gt;设备&lt;/code&gt;中选择&lt;code&gt;keyboard&lt;/code&gt;，拉到最下，添加快捷键，如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/Manjaro_yh/kjj.png&#34; alt=&#34;快捷键&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;大号文本&#34;&gt;大号文本&lt;/h4&gt;
+
+&lt;p&gt;在&lt;code&gt;设置&lt;/code&gt; -&amp;gt; &lt;code&gt;通用辅助功能&lt;/code&gt; 中开启&lt;code&gt;大号文本&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;优化vim&#34;&gt;优化vim&lt;/h4&gt;
+
+&lt;p&gt;因为已经有vscode了，可以用code命令代替vim（需要sudo的还是要用vim才行），所以vim对我来说就是一个普通的文本编辑器了，写代码也基本在vscode上进行（现在vscode实在太好用了）。虽然如此，默认vim用起来还是很蛋疼的，需要进行一些优化，我的vim配置基本都是一些简单的美化插件，只作为一个普通的文本编辑器的话足够了，如果你和我一样只是想用vim做一些简单的编辑，可以参考我的vim配置：
+&lt;a href=&#34;https://github.com/ZT-XU/666&#34;&gt;https://github.com/ZT-XU/666&lt;/a&gt;
+&amp;gt; 差不多就这些了，后面有想到其他的点再更新！！！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Winodws 10 美化与调优</title>
+      <link>http://localhost:1313/post/win10/</link>
+      <pubDate>Fri, 08 Mar 2019 14:09:12 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/win10/</guid>
+      <description>&lt;h2 id=&#34;写在文前&#34;&gt;写在文前&lt;/h2&gt;
+
+&lt;p&gt;最近重装了自己的win 10系统，对自己的系统进行了美化调优，目前基本用得还是很舒服的，所以这篇博客决定来做一些分享，分享一些使用Windows的心得（将来可能也会写一些Linux系统的文章）。&lt;br /&gt;
+我个人是不喜欢折腾+具有“软件洁癖”的类型，所以这次分享的操作大体上都会比较简单，不会涉及到复杂的注册表操作，安装的软件能少装就不装，我也会在文章最后推荐一些我个人觉得很好用的Windows（绿色）软件。&lt;br /&gt;
+&amp;gt; 我将从刚刚重装完成的电脑开始，介绍一些基础的操作让它更加好用，虽说如此，这些操作你都可以在自己的电脑上进行。&lt;/p&gt;
+
+&lt;h2 id=&#34;美化&#34;&gt;美化&lt;/h2&gt;
+
+&lt;p&gt;重装好Windows 10后，系统的默认界面是这样的：&lt;br /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/ZT-XU/myblog/master/win10yh/Windows-10-S.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+美化之后：&lt;br /&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/ZT-XU/myblog/master/win10yh/win%E7%BE%8E%E5%8C%96.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;一-桌面&#34;&gt;一、桌面&lt;/h3&gt;
+
+&lt;p&gt;对电脑桌面颜值影响最大的就是壁纸了，好看的壁纸能让我们在使用电脑时心情舒畅。好看的壁纸可以在网上搜索找到，但如果你和我一样喜欢动态壁纸的话，推荐&lt;strong&gt;wallpaper engine&lt;/strong&gt;：&lt;br /&gt;
+&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/wallpaper.png&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+一个只专注于动态壁纸的软件，简单易用，steam上售价18 RMB，一顿饭钱，就可以用到各种炫酷的动态壁纸，相信我，你会爱上这个软件的。&lt;/p&gt;
+
+&lt;h3 id=&#34;二-任务栏&#34;&gt;二、任务栏&lt;/h3&gt;
+
+&lt;p&gt;我比较喜欢Mac Os的dock外观，所以接下来，就是对任务栏进行美化了。首先，右键单击任务栏空白处，将红框部分全部取消勾选：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/rwll.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在桌面新建一个空文件夹，然后右键单击任务栏空白处，并选择「新建工具栏」，在弹出的窗口中选择你刚才新建的那个文件夹。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ZT-XU/myblog/master/win10yh/%E5%B7%A5%E5%85%B7%E6%A0%8F.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/%E4%BB%BB%E5%8A%A1%E6%A0%8F1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;随后，右键任务栏取消勾选&lt;code&gt;任务栏锁定&lt;/code&gt;向左一直拖动新建文件夹，直到应用程序图标&lt;strong&gt;被挤压到右边&lt;/strong&gt;，并将应用程序栏（就是程序图标前那个）拖拽到你喜欢的位置：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/%E4%BB%BB%E5%8A%A1%E6%A0%8F2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/%E4%BB%BB%E5%8A%A1%E6%A0%8F3.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后取消勾选新建工具栏的&lt;code&gt;显示文本&lt;/code&gt;及&lt;code&gt;显示标题&lt;/code&gt;属性，再次&lt;code&gt;锁定任务栏&lt;/code&gt;，删除新建文件夹:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/%E4%BB%BB%E5%8A%A1%E6%A0%8F4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后在桌面上选择你最常用得5到6个软件固定到任务栏，再右键单击桌面空白处，在&lt;code&gt;查看&lt;/code&gt;中取消勾选&lt;code&gt;显示桌面图标&lt;/code&gt;，一个仿dock的任务栏就完成了。桌面美化大功告成！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ZT-XU/myblog/master/win10yh/win%E7%BE%8E%E5%8C%96.png&#34; alt=&#34;&#34; /&gt;
+&amp;gt; 任务栏透明化: 在微软商店中，搜索安装Translucent TB并启动，设置开机启动：右键程序图标，勾选&amp;rdquo;Open at boot&amp;rdquo;, 然后在前5个菜单项中选择clear即可。&lt;/p&gt;
+
+&lt;h2 id=&#34;调优&#34;&gt;调优&lt;/h2&gt;
+
+&lt;h3 id=&#34;一-开始菜单&#34;&gt;一、开始菜单&lt;/h3&gt;
+
+&lt;p&gt;隐藏桌面后，我选择使用任务栏 + 开始菜单来代替桌面的快捷方式，任务栏放5到6个最常用的软件，其他的软件快捷方式就放在开始菜单那里。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/kscd.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;我发现很多小伙伴并不知道开始菜单右边那些区域是可以用来整理快捷方式的，像office，回收站，我的电脑，控制面板这些放在这里简直不要太方便好吗。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;二-优化小娜&#34;&gt;二、优化小娜&lt;/h3&gt;
+
+&lt;p&gt;Win 10的小娜其实可以用来作为Linux下&lt;code&gt;Albert&lt;/code&gt;那样的工作，只不过，需要进行一些优化（禁止搜索网页从而提高速度），优化教程可以参考：&lt;br /&gt;
+&lt;a href=&#34;https://jingyan.baidu.com/article/48206aead0fd57216ad6b328.html&#34;&gt;小娜优化&lt;/a&gt;&lt;br /&gt;
+之后，就可以使用&lt;code&gt;win + s&lt;/code&gt;键搜索启动应用了。&lt;/p&gt;
+
+&lt;h3 id=&#34;三-文件资源管理器&#34;&gt;三、文件资源管理器&lt;/h3&gt;
+
+&lt;p&gt;固定在程序栏的文件资源管理器一直是很蛋疼的存在，点击打开之后是快速访问，但基本没有我想要看到的东西，所以把它打开的位置定位为我的电脑，方法如下图：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/zyglq.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这样，点击资源管理器之后，就相当于我的电脑了，在我的电脑上面的菜单栏上，基本涵盖了右键点我的电脑的菜单项，卸载软件的选项也在这里哦！&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/ZT-XU/myblog/raw/master/win10yh/wddn.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;windows好用的软件&#34;&gt;Windows好用的软件&lt;/h2&gt;
+
+&lt;p&gt;文章最后，推荐几个我认为在Windows上非常好用得软件。&lt;/p&gt;
+
+&lt;h3 id=&#34;snipaste&#34;&gt;Snipaste&lt;/h3&gt;
+
+&lt;p&gt;给力的截图软件，在微软商店即可安装。&lt;/p&gt;
+
+&lt;h3 id=&#34;vscode&#34;&gt;Vscode&lt;/h3&gt;
+
+&lt;p&gt;宇宙第一编辑器，下载地址：&lt;a href=&#34;https://code.visualstudio.com/download&#34;&gt;https://code.visualstudio.com/download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;everything&#34;&gt;EveryThing&lt;/h3&gt;
+
+&lt;p&gt;超强的文件搜索软件，搜索速度非常快，完爆Windows自带的，力荐！
+下载地址：&lt;a href=&#34;https://www.voidtools.com/zh-cn/downloads/&#34;&gt;https://www.voidtools.com/zh-cn/downloads/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;火绒安全&#34;&gt;火绒安全&lt;/h3&gt;
+
+&lt;p&gt;完爆360、腾讯管家，超级良心的电脑杀毒软件，还带有广告窗口拦截等功能，力荐! 下载地址：&lt;a href=&#34;https://www.huorong.cn/&#34;&gt;https://www.huorong.cn/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;uninstall-tool&#34;&gt;Uninstall Tool&lt;/h3&gt;
+
+&lt;p&gt;可以卸载系统检测不到的一些软件，下载地址：&lt;a href=&#34;https://www.crystalidea.com/uninstall-tool/download&#34;&gt;https://www.crystalidea.com/uninstall-tool/download&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;anydesktop&#34;&gt;Anydesktop&lt;/h3&gt;
+
+&lt;p&gt;自带传输协议的电脑远程访问工具，支持Mac Os、Windows、Linux三大平台，超强！下载地址：&lt;a href=&#34;https://anydesk.com/download&#34;&gt;https://anydesk.com/download&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,44 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tinker</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Tinker</description>
+    <title>Posts on Tinker</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Tinker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 Mar 2019 14:13:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 Mar 2019 14:11:52 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Fri, 08 Mar 2019 14:13:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h1 id=&#34;tinker&#34;&gt;&lt;strong&gt;Tinker&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
-
-&lt;p&gt;我是一名大学生，程序员，喜欢二次元（就是宅嘛。。。），这里会记录我的学习和生活点滴。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;2019/3/8&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;在这里我会写一些平时学习的体会，可能是一些学习笔记，也可能是一些学习知识，&lt;strong&gt;Tinker&lt;/strong&gt;会成为我记录我学习生涯的地方，正如&lt;strong&gt;Tinker&lt;/strong&gt;的意思一样，我在写博客的过程，就是对自己的知识体系进行修补的过程，是一个加深记忆的过程。我也希望这里可以成为一个我与他人分享、讨论，然后共同进步的平台！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-&lt;li&gt;more later&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;connection&#34;&gt;Connection&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;e-mail&lt;/strong&gt; : &lt;a href=&#34;mailto:xzt.xu4@gmail.com&#34;&gt;xzt.xu4@gmail.com&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Manjaro 美化与调优</title>
