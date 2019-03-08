@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Tinker</title>
-    <link>http://localhost:1313/post/</link>
-    <description>Recent content in Posts on Tinker</description>
+    <title>Posts on Tinker - A blog website</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Tinker - A blog website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 08 Mar 2019 14:11:52 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Manjaro 美化与调优</title>
-      <link>http://localhost:1313/post/manjaro/</link>
+      <link>/post/manjaro/</link>
       <pubDate>Fri, 08 Mar 2019 14:11:52 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/manjaro/</guid>
+      <guid>/post/manjaro/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;之前说过要写一篇Linux的优化文章，今天正好有空，赶紧开工。我曾经是Ubuntu的忠实粉丝，但是如今我已经叛逃到Manjaro了。&lt;/p&gt;
 
@@ -209,10 +209,10 @@ alt-tab 切换效果美化&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>Winodws 10 美化与调优</title>
-      <link>http://localhost:1313/post/win10/</link>
+      <link>/post/win10/</link>
       <pubDate>Fri, 08 Mar 2019 14:09:12 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/win10/</guid>
+      <guid>/post/win10/</guid>
       <description>&lt;h2 id=&#34;写在文前&#34;&gt;写在文前&lt;/h2&gt;
 
 &lt;p&gt;最近重装了自己的win 10系统，对自己的系统进行了美化调优，目前基本用得还是很舒服的，所以这篇博客决定来做一些分享，分享一些使用Windows的心得（将来可能也会写一些Linux系统的文章）。&lt;br /&gt;
@@ -319,10 +319,10 @@ alt-tab 切换效果美化&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>如何使用 Markdown 书写博客</title>
-      <link>http://localhost:1313/post/mk/</link>
+      <link>/post/mk/</link>
       <pubDate>Fri, 08 Mar 2019 14:05:38 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/mk/</guid>
+      <guid>/post/mk/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;## Markdown 是什么？
 Markdown是一种轻量级标记语言，你可以简单地理解为HTML的简化版，Markdown简单的语法使阅读和创作文档变得容易。因为语法特别简单而且容易排版，Markdown经常被用来书写个人博客。&lt;/li&gt;

@@ -1,92 +1,92 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="http://localhost:1313/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2019-03-08T14:13:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/manjaro/</loc>
+    <loc>/post/manjaro/</loc>
     <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/win10/</loc>
+    <loc>/post/win10/</loc>
     <lastmod>2019-03-08T14:09:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/mk/</loc>
+    <loc>/post/mk/</loc>
     <lastmod>2019-03-08T14:05:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/manjaro/</loc>
+    <loc>/tags/manjaro/</loc>
     <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2019-03-08T14:13:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/blogs/</loc>
+    <loc>/categories/blogs/</loc>
     <lastmod>2019-03-08T14:13:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/mkdown/</loc>
+    <loc>/tags/mkdown/</loc>
     <lastmod>2019-03-08T14:05:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/windows/</loc>
+    <loc>/tags/windows/</loc>
     <lastmod>2019-03-08T14:09:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/%E7%BE%8E%E5%8C%96/</loc>
+    <loc>/tags/%E7%BE%8E%E5%8C%96/</loc>
     <lastmod>2019-03-08T14:11:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
