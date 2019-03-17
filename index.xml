@@ -6,17 +6,12 @@
     <description>Recent content on Tinker - A Blog Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-<<<<<<< HEAD
     <lastBuildDate>Sun, 17 Mar 2019 16:05:43 +0800</lastBuildDate>
-=======
-    <lastBuildDate>Fri, 08 Mar 2019 14:42:25 +0800</lastBuildDate>
->>>>>>> 17393fbdadc4aa33d5badf7e39672538f5a5f784
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-<<<<<<< HEAD
       <title>C&#43;&#43;_heap</title>
       <link>/post/c&#43;&#43;_heap/</link>
       <pubDate>Sun, 17 Mar 2019 16:05:43 +0800</pubDate>
@@ -214,108 +209,6 @@ C++程序的内存格局通常分为四个区：&lt;br /&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
-=======
-      <title>Hadoop学习笔记（1）</title>
-      <link>/post/hadoop-1/</link>
-      <pubDate>Fri, 08 Mar 2019 14:42:25 +0800</pubDate>
-      
-      <guid>/post/hadoop-1/</guid>
-      <description>&lt;h2 id=&#34;使用docker搭建分布式环境&#34;&gt;使用docker搭建分布式环境&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;今天开始，准备学习大数据分析，参考的教材是O‘REILLY的&lt;a href=&#34;https://book.douban.com/subject/30180515/&#34;&gt;《Hadoop数据分析》&lt;/a&gt;,算是一本比较新的书吧！我自己也属于刚入门，写笔记除了分享，更重要的是可以提高学习的效果！！&lt;/p&gt;
-
-&lt;p&gt;这里我使用的是docker而不是书上推荐的在vmware上安装虚拟机，至于为什么抛弃vm而选择docker，当然是docker更加轻量级更加好用，docker可以说是当今虚拟化技术的潮流，当然想更具体的优点可以去查阅相关资料，这里就不再累述。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;下面先说明一下我的环境配置：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;系统：Manjaro Linux&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Docker version：18.09.2-ce&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;安装docker（Arch 真爽啊）：&lt;/strong&gt;&lt;br /&gt;
-&lt;code&gt;sudo pacman -S docker&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;更换docker源（使用ustc源）：&lt;/strong&gt;&lt;br /&gt;
-&lt;code&gt;sudo gedit /etc/docker/daemon.json&lt;/code&gt;&lt;br /&gt;
-然后把下面的内容加入，即可：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;nt&#34;&gt;&amp;#34;registry-mirrors&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://docker.mirrors.ustc.edu.cn&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;把自己加入&lt;code&gt;docker&lt;/code&gt;用户组，这样就运行docker时就不用加&lt;code&gt;sudo&lt;/code&gt;了&lt;/strong&gt;：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;
-sudo groupadd docker
-sudo usermod -aG docker &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;然后重启即可。&lt;/p&gt;
-
-&lt;h3 id=&#34;搭建分布式环境&#34;&gt;搭建分布式环境&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;书中搭建的环境是伪分布式的，也就是单机，但是为了将来更深入地学习云计算和大数据，我在这里搭建的是全分布式的环境，搭建方法非常简单，得益于一个大佬在docker hub上发布了已经配置好的开发环境，使我们不用被繁琐的配置步骤所困扰，很快地学习Hadoop的核心部分。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;首先，我们先到docker hub上拉去相关的镜像，你也可以自己一步步拉，从操作系统到Hadoop再到jdk一个个地拉，然后自己配置，如果闲麻烦（like me），直接拉大佬已经配置好的镜像就行了，方法很简单，运行命令：&lt;br /&gt;
-&lt;code&gt;sudo docker pull kiwenlau/hadoop:1.0&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后克隆大佬的配置库：&lt;br /&gt;
-&lt;code&gt;git clone https://github.com/kiwenlau/hadoop-cluster-docker&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;这是我用来测试环境，我们的目的是学习，所以我后面会再自己写hadoop的配置熟悉一下。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;创建Hadoop网络：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo docker network create --driver=bridge hadoop&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;这个很重要，使用桥接网络我们才可以模拟分布式集群。&lt;/p&gt;
-
-&lt;p&gt;下面先热一下身：
-启动docker容器：&lt;br /&gt;
-&lt;code&gt;cd hadoop-cluster-docker&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;sudo ./start-container.sh&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;通过结果你也可以知道，这个环境包含了1个&lt;code&gt;master&lt;/code&gt;，2个&lt;code&gt;slaver&lt;/code&gt;，对于我们学习完全够用了。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这是我们会进如&lt;code&gt;master&lt;/code&gt;的根目录下，运行自带的WordCount程序热身一下先吧：&lt;br /&gt;
-&lt;code&gt;./start-hadoop.sh&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;./run-wordcount.sh&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;以上就是这篇笔记的内容，后续会继续深入学习，待更。。。&lt;/p&gt;
-
-&lt;h2 id=&#34;写在最后&#34;&gt;写在最后&lt;/h2&gt;
-
-&lt;p&gt;今天开始会开始学习Hadoop数据分析，在搭好环境之后对docker更加喜爱了，如果将来有机会，也会写一些docker的文章。目前先啃好这本书，上面的内容基本与书上无关，所以后面就是Hadoop实践部分了。开学了，希望可以保持一月一更，甚至一月多更。&lt;/p&gt;
-
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kiwenlau.com/2016/06/12/160612-hadoop-cluster-docker-update/&#34;&gt;https://kiwenlau.com/2016/06/12/160612-hadoop-cluster-docker-update/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.docker.com/get-started/&#34;&gt;https://docs.docker.com/get-started/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
->>>>>>> 17393fbdadc4aa33d5badf7e39672538f5a5f784
     </item>
     
     <item>
